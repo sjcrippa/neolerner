@@ -1,7 +1,12 @@
 import { Stack } from "expo-router";
+import { View } from "react-native";
 
 export default function Layout() {
   return (
-    <Stack></Stack>
+    <View className="flex-1">
+      <Stack screenOptions={{
+        headerTitle: 'Neolernen'
+      }} />
+    </View>
   )
 }

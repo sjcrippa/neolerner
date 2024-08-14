@@ -1,15 +1,16 @@
+import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+
 import Welcome from './components/hero/welcome';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <View className='flex-1 items-center justify-center bg-black '>
-      <Text className='text-white'>Funciona?</Text>
-      <View className='border border-red-500'>
+    <SafeAreaProvider>
+      <View className='flex-1 items-center justify-center bg-black '>
+        <StatusBar style="light" />
         <Welcome />
       </View>
-      <StatusBar style="auto" />
-    </View>
+    </SafeAreaProvider>
   );
-}
+};
