@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import Button from "../src/components/Button";
+import Button from "../src/auth/components/Button";
 
 export default function Index() {
   return (
