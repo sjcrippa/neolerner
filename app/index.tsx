@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Session } from "@supabase/supabase-js";
 import { supabase } from "@/src/shared/lib/supabase";
 import Auth from "@/src/auth/components/Auth";
+import { StatusBar } from 'expo-status-bar';
 
 export default function Index() {
   const [session, setSession] = useState<Session | null>(null)
@@ -19,11 +20,10 @@ export default function Index() {
   }, [])
 
   return (
-    <View className="flex-1 justify-center items-center bg-black ">
-      <View>
-        <Auth />
-        {session && session.user && <Text>{session.user.id}</Text>}
-      </View>
+    <View className='flex-1 bg-black'>
+      <StatusBar style='light' />
+      <Auth />
+      {session && session.user && <Text>{session.user.id}</Text>}
     </View>
   )
 }
