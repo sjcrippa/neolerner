@@ -39,8 +39,12 @@ export default function Auth() {
     <View className='flex-1 px-4 justify-center'>
       <View>
         <Input
+          style={{ color: 'gray' }}
           label="Email"
-          leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+          labelStyle={{
+            color: 'gray'
+          }}
+          leftIcon={{ type: 'font-awesome', name: 'envelope', color: 'gray' }}
           onChangeText={(text) => setEmail(text)}
           value={email}
           placeholder="email@address.com"
@@ -49,8 +53,12 @@ export default function Auth() {
       </View>
       <View>
         <Input
+          style={{ color: 'gray' }}
           label="Password"
-          leftIcon={{ type: 'font-awesome', name: 'lock' }}
+          labelStyle={{
+            color: 'gray'
+          }}
+          leftIcon={{ type: 'font-awesome', name: 'lock', color: 'gray' }}
           onChangeText={(text) => setPassword(text)}
           value={password}
           secureTextEntry={true}
@@ -58,13 +66,14 @@ export default function Auth() {
           autoCapitalize={'none'}
         />
       </View>
-      <View className='flex'>
-        <Pressable className='p-2 mx-10 mb-3 rounded-lg bg-blue-500' disabled={loading} onPress={() => signInWithEmail()}>
-          <Text>Sign in</Text>
+      <View>
+        <Pressable className='w-full bg-gray-400 p-2 rounded-lg flex items-center' disabled={loading} onPress={() => signInWithEmail()}>
+          <Text className='text-white font-bold'>Sign in</Text>
         </Pressable>
-
-        <Pressable className='p-2 mx-10 rounded-lg bg-blue-500' disabled={loading} onPress={() => signUpWithEmail()}>
-          <Text>Sign up</Text>
+      </View>
+      <View className='mt-2'>
+        <Pressable className='w-full bg-emerald-500 p-2 rounded-lg flex items-center' disabled={loading} onPress={() => signUpWithEmail()}>
+          <Text className='text-white font-bold'>Sign up</Text>
         </Pressable>
       </View>
     </View>
